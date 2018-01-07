@@ -11,6 +11,46 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <style>
+      body {
+        background-color: #fcfcfc;
+      }
+      nav,
+      .tabs .indicator {
+        background-color: #E8C835;
+      }
+      .tabs .tab a {
+        color: #E8C835;
+      }
+      .tabs .tab a.active,
+      .tabs .tab a:hover {
+        color: #c9ad3d;
+      }
+      nav a,
+      nav ul a,
+      nav .brand-logo,
+      .page-footer .footer-copyright {
+        color: #252525;
+      }
+      .page-footer {
+        background-color: #E8C835;
+        color: #252525;
+      }
+      .brand-logo {
+        margin-left: 15px;
+      }
+      .header-logo {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+        height: auto;
+        margin-top: 30px;
+      }
+      .sm-margin-bot {
+        margin-bottom: 15px;
+      }
+    </style>
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -18,8 +58,13 @@
     <![endif]-->
     <nav>
       <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo" style="margin-left:15px;">(λ)</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="index.html" class="brand-logo">(λ)</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-small-and-down">
+          <li><a href="index.html">About</a></li>
+          <li><a href="#">Results</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
           <li><a href="index.html">About</a></li>
           <li><a href="#">Results</a></li>
         </ul>
@@ -28,8 +73,9 @@
 
     <div class="container">
       <header>
-        <h1>KOG 2018</h1>
-        <div class="card-panel">
+        <img class="header-logo" src="img/king_of_games.png">
+        <h1 class="center">KOG 2018</h1>
+        <div class="card-panel center">
           <p>Welcome to the King of Games (KOG) 2018 competition hosted by the Lambda server on Discord</p>
         </div>
       </header>
@@ -135,38 +181,52 @@
                 <li>For Section 2, your points are (15 / 30) * 100, which equals 50</li>
                 <li>For Section 3, your points are (29 / 30) * 100, which equals 97</li>
               </ul>
-              <p style="margin-bottom:14.5px">This means that for the entire Platformer category, your final score is: 204</p>
+              <p class="sm-margin-bot">This means that for the entire Platformer category, your final score is: 204</p>
               <p>Say, however, that 57, 50, and 97 are the highest scores that each section got amongst all players. That is, you scored the highest on each individual section of the platformer category. You will get an additional 50 points added to your total. Your new final score is: 254</p>
             </div>
           </div>
         </div>
       </section>
+      <article class="row">
+        <div class="col s6 m4 l3">
+          <div class="card">
+            <div class="card-image">
+              <img class="materialboxed" src="img/king_of_games.png">
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m4 l3">
+          <div class="card">
+            <div class="card-image">
+              <img class="materialboxed" src="img/games_list.png">
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
     <footer class="page-footer">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">KOG 2018</h5>
-            <p class="grey-text text-lighten-4">Do you have what it takes to be recognized as the king of games? Email me for more information</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="index.html">About</a></li>
-              <li><a class="grey-text text-lighten-3" href="#">Results</a></li>
-            </ul>
+          <div class="col s12">
+            <h5>KOG 2018</h5>
+            <p>Do you have what it takes to be recognized as the king of games?</p>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
         © 2018 Lambda Discord
-        <a class="grey-text text-lighten-4 right" href="#!">guidoruiz4@gmail.com</a>
+        <span class="right">guidoruiz4@gmail.com</span>
         </div>
       </div>
     </footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".button-collapse").sideNav()
+      })
+    </script>
   </body>
 </html>
